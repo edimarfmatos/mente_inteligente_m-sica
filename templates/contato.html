@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Contato | Escola de Música{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Contato</h2>
+  <p>📍 Rua Nossa Senhora dos Navegantes, 545 - Cidade de Deus - Manaus/AM</p>
+  <p>📞 (92) 99151-1785</p>
+
+  <form method="post" action="{{ url_for('contato') }}">
+    <div class="mb-3">
+      <input type="text" class="form-control" name="nome" placeholder="Seu Nome" required>
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" name="email" placeholder="Seu Email" required>
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" name="mensagem" placeholder="Sua Mensagem" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+  <hr>
+
+  <h4>Comentários dos Visitantes</h4>
+  {% if comentarios %}
+    {% for comentario in comentarios %}
+      <div class="card my-2">
+        <div class="card-body">
+          <h5 class="card-title">{{ comentario.nome }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ comentario.email }}</h6>
+          <p class="card-text">{{ comentario.mensagem }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>Seja o primeiro a deixar um comentário!</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- templates/conteudos.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Galeria de Imagens</h2>
+  <div class="row">
+    {% for img in imagens %}
+    <div class="col-md-4 mb-4   galery" style="width:auto; ">
+      <div class="card">
+        <img src="{{ url_for('static', filename='img/' ~ img.nome) }}" class="card-img-top "  style="width:200px;" alt="{{ img.titulo }}">
+        <div class="card-body">
+          <h5 class="card-title" >{{ img.titulo }}</h5>
+          <p class="card-text">{{ img.descricao }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

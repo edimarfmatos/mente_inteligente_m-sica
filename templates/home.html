@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Home - Mente Inteligente{% endblock %}
+
+{% block content %}
+<h1 class="text-center titulo-h1 carro">Bem-vindo à Escola de Música Mente Inteligente 🎶</h1>
+<h2 class="text-center titulo-h2">Desenvolva seu talento musical com a gente!</h2>
+
+<!-- Carrossel de fotos -->
+<div id="carouselFotos" class="carousel slide mb-5" data-bs-ride="carousel" >
+  <div class="carousel-inner" >
+    <div class="carousel-item active" style="width:400px; margin: auto;">
+      <img src="{{ url_for('static', filename='img/foto1.jpg') }}" class="d-block w-100 galeria-img" alt="Aula de teclado">
+
+    </div>
+    <div class="carousel-item" style="width:400px; margin: auto;">
+      <img src="{{ url_for('static', filename='img/foto2.jpg') }}" class="d-block w-100 galeria-img" alt="Aula de violão">
+    </div>
+    <div class="carousel-item" style="width:400px; margin: auto;">
+      <img src="{{ url_for('static', filename='img/foto3.jpg') }}" class="d-block w-100 galeria-img" alt="Turma de bateria">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Informações da escola -->
+<div class="text-center"> 
+  <h4>🎼 Venha aprender instrumentos de forma divertida e eficaz!</h4>
+  <p>🎹 Aulas de Teclado, 🎸 Violão, 🥁 Bateria para iniciantes!</p>
+  <p>👩‍🏫 Professor Ev. Edimar.</p>
+  <p>📍 Rua Nossa Senhora dos Navegantes, 545 - Cidade de Deus</p>
+  <p>📞 (92) 99151-1785</p>
+  <a href="/contato" class="btn btn-primary mt-3">Entre em Contato</a>
+</div>
+{% endblock %}
